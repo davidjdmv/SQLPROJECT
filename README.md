@@ -1,5 +1,12 @@
-# SQLPROJECT
-Proyecto de bases de datos y consultas ventas e inventarios
+
+```md
+# MedTrace SQL 101 — Trazabilidad & Ventas (SQLite)
+
+Proyecto educativo con **SQLite** para practicar SQL como Analista de Datos/BI:
+- Modelo relacional (productos, lotes, inventario, ventas, costos).
+- **Consultas**: SELECT/GROUP BY, **JOINs**, **CTE (WITH)** y **funciones de ventana**.
+- KPIs: ingresos y **margen por lote**, ranking y acumulados.
+
 ```mermaid
 erDiagram
   PRODUCT ||--o{ LOT : has
