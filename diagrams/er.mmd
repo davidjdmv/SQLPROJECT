@@ -1,0 +1,44 @@
+```mermaid
+erDiagram
+  PRODUCT ||--o{ LOT : has
+  LOT ||--o{ INVENTORY_MOV : records
+  LOT ||--o{ SALE : sold_in
+  LOT ||--|| LOT_COST : costed_by
+
+  PRODUCT {
+    INTEGER product_id PK
+    TEXT sku
+    TEXT name
+  }
+
+  LOT {
+    INTEGER lot_id PK
+    TEXT lot_code
+    INTEGER product_id FK
+    DATE mfg_date
+    DATE exp_date
+  }
+
+  INVENTORY_MOV {
+    INTEGER mov_id PK
+    INTEGER lot_id FK
+    TEXT mov_type  "IN|OUT|ADJ"
+    INTEGER qty
+    DATE mov_date
+    TEXT note
+  }
+
+  SALE {
+    INTEGER sale_id PK
+    INTEGER lot_id FK
+    TEXT customer
+    INTEGER units
+    REAL unit_price
+    DATE sale_date
+  }
+
+  LOT_COST {
+    INTEGER lot_id PK FK
+    REAL unit_cost
+  }
+```
